@@ -6,7 +6,7 @@
     <div class="col s4">
       <h4><%= product.name %></h4>
       <p><%= link_to "Details", product_path(product), :class => "btn", remote: true%></p>
-      <p id=<%="product#{product.id}"%> class="hide"><%= product.description %></p>
+      <p id=<%="product#{product.id}"%> style="display: none;"><%= product.description %></p>
       <p><%= number_to_currency product.price %></p>
       <%= form_for @order_item,  remote: true do |f| %>
         <%= f.hidden_field :product_id, value: product.id %>

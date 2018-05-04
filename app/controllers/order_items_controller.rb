@@ -2,7 +2,11 @@ class OrderItemsController < ApplicationController
 
   def create
     @order = current_order
-    @item = @order.order_items.new(item_params)
+    quantity = item_params[:quantity].to_i
+    product_id = item_params[:product_id]
+    @item = @order.order_items.find_or_initialize_by(product_id: product_id)
+    @item.quantity = @item.quantity.to_i + quantity
+    @item.save
     @order.save
     session[:order_id] = @order.id
     respond_to do |format|

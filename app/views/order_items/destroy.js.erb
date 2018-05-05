@@ -3,3 +3,4 @@ alert("#item<%=@item.id%>");
 $("#item<%=@item.id%>").remove();
 $("#cart a").text("Cart | Total items: " + <%= cart_items %> );
 $("#total").text("<%= number_to_currency current_order.total_price %>");
+$("#charges").html("<%= j render("charges/new") %>");

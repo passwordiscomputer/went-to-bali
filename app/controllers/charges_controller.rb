@@ -6,18 +6,25 @@ class ChargesController < ApplicationController
     # Amount in cents
     @amount = 500
 
-    customer = Stripe::Customer.create(
-      :email => params[:stripeEmail],
-      :source  => params[:stripeToken]
-    )
+    if current_user
+      customer = Stripe::Customer.create(
+        :email => params[:stripeEmail],
+        :source  => params[:stripeToken]
+      )
 
-    charge = Stripe::Charge.create(
-      :customer    => customer.id,
-      :amount      => @amount,
-      :description => 'Rails Stripe customer',
-      :currency    => 'usd'
-    )
+      charge = Stripe::Charge.create(
+        :customer    => customer.id,
+        :amount      => @amount,
+        :description => 'Rails Stripe customer',
+        :currency    => 'usd'
+      )
 
+      current_order.finalize(current_user)
+      session[:order_id] = nil
+    else
+      flash[:alert] = "You need to sign up or sign in to complete your order."
+      redirect_to sign_in_path
+    end
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to redirect_to cart_path

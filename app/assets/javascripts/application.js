@@ -12,6 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require masonry/jquery.masonry
+//= require masonry/modernizr-transitions
 //= require turbolinks
+
 //= require_tree .
 //= require materialize-sprockets
+$(function(){
+
+  $('#masonry-container').masonry({
+    itemSelector: '.box',
+    columnWidth: 100,
+
+    isAnimated: !Modernizr.csstransitions,
+    isRTL: true
+  });
+
+
+});

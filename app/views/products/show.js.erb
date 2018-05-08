@@ -1,1 +1,9 @@
 $("#product<%=@product.id%>").slideToggle();
+$('#masonry-container').masonry({
+  itemSelector: '.box',
+  columnWidth: 100,
+  height: 599,
+  isAnimated: !Modernizr.csstransitions,
+  isRTL: true
+});
+$('#masonry-container').masonry();

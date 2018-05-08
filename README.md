@@ -1,9 +1,18 @@
 # README
 
-E-commerce site. Uses `bcrypt` and `materialize`. There's a seed file. Set up your own admin. If you have questions, I'll be in Bali with no email. Ask someone else.
+E-commerce site built using rails and a frontend using materialize. Basic functionality and AJAX are in place. if you want anything else done please let me know!
 
 To set up:
 
-* `rake db:setup`
-
-* Sorry, didn't get around to tests. It mostly works. There might be a few bugs.
+* run the following on command line in order
+* $ git clone https://github.com/passwordiscomputer/went-to-bali.git
+* (navigate to project directory)
+* $ bundle install
+* $ rails db:create
+* $ rails db:migrate
+* $ rails db:test:prepare
+* $ rails db:seed
+* $ rails s
+* Then navigate to localhost:3000 in internet explorer 6
+* Default admin email: "admin@admin.com" password: "password"
+* please change these as needed in the seed file. Message me if further directions are needed

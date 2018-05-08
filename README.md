@@ -2,7 +2,15 @@
 
 E-commerce site built using rails and a frontend using materialize. Basic functionality and AJAX are in place. if you want anything else done please let me know!
 
-To set up:
+# Technologies used
+* Rails
+* materialize
+* Factorybot
+* Bcrypt
+* Masonry
+* Jquery with AJAX
+
+# SET UP:
 
 * run the following on command line in order
 * $ git clone https://github.com/passwordiscomputer/went-to-bali.git

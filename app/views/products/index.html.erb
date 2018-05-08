@@ -8,6 +8,9 @@
         <div class="card-content"> -->
 
           <h4><%= product.name %></h4>
+          <% if admin %>
+            <h6><%=link_to "edit", edit_product_path(product) %></h6>
+          <% end %> 
           <p><%= link_to "Details", product_path(product), :class => "btn", remote: true%></p>
           <p id=<%="product#{product.id}"%> style="display: none;"><%= product.description %></p>
           <p><%= number_to_currency product.price %></p>

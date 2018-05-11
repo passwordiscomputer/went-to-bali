@@ -44,6 +44,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    flash[:alert] = "Product destroyed"
+    @product= Product.find(params[:id])
+    @product.destroy
+    redirect_to '/'
+  end
+
   private
   def product_params
     params.require(:product).permit(:name, :description, :price)

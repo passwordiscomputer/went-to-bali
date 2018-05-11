@@ -31,3 +31,5 @@ E-commerce site built using rails and a frontend using materialize. Basic functi
 * allow admin to edit and add new products
 * Add admin links to navbar so admins can easily add, update and delete products.
 * Fix the row height for products, which can quickly become uneven.
+* Add admin flash messages for adding, updating and deleting products.
+* Add flash messages for signing up, signing in and signing out.

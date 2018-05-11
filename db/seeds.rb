@@ -15,7 +15,7 @@ class Seed
   end
 
   def generate_admin
-    User.create(name: "admin", email: "admin@admin.com", password_digest: "password", admin: true)
+    User.create(name: "admin", email: "admin@admin.com", password: "password", admin: true)
   end
 end
 

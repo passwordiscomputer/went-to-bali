@@ -24,3 +24,10 @@ E-commerce site built using rails and a frontend using materialize. Basic functi
 * Then navigate to localhost:3000 in internet explorer 6
 * Default admin email: "admin@admin.com" password: "password"
 * please change these as needed in the seed file. Message me if further directions are needed
+
+# Features Added
+* Ensure that users can't order a negative number of items.
+* Add Stripe for user checkout
+* allow admin to edit and add new products
+* Add admin links to navbar so admins can easily add, update and delete products.
+* Fix the row height for products, which can quickly become uneven.
